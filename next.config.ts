@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  reactCompiler: true,
+  devIndicators: false, /* Dev tool option */
+  reactCompiler: true
 };
 
 export default nextConfig;

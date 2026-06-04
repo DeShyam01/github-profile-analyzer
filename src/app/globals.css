@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand */
+  --primary: #f97316;            /* Orange 500 */
+  --primary-hover: #ea580c;
+  --primary-foreground: #ffffff;
+
+  /* Backgrounds */
   --background: #ffffff;
-  --foreground: #171717;
+  --surface: #f8fafc;
+  --surface-hover: #f1f5f9;
+
+  /* Borders */
+  --border: #d1d9e0;
+  --border-hover: #cbd5e1;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  /* States */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+
+  /* Misc */
+  --shadow: rgba(15, 23, 42, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+   /* Brand */
+  --primary: #fb923c;            /* Slightly brighter in dark mode */
+  --primary-hover: #f97316;
+  --primary-foreground: #ffffff;
+
+  /* Backgrounds */
+  --background: #000000;
+  --surface: #111111;
+  --surface-hover: #1a1a1a;
+
+  /* Borders */
+  --border: #262626;
+  --border-hover: #404040;
+  
+  /* Text */
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d8;
+  --text-muted: #71717a;
+  
+  /* States */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+  
+  /* Misc */
+  --shadow: rgba(94, 94, 94, 0.4);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components{
+  .bg-theme{
+    background-color: var(--background);
+  }
+  
+  .bg-surface{
+    background-color: var(--surface);
+  }
+  
+  .border-theme{
+    border: 1px solid var(--border);
+  }
+
+  .shadow-theme{
+    box-shadow: 0 4px 6px var(--shadow);
+  }
+
+  .text-theme{
+    color: var(--text-primary);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Chelsea Market', system-ui;
 }
