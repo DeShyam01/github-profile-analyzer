@@ -1,0 +1,17 @@
+export interface UserProfiles {
+    id: Number,
+    username: String,
+    name: String,
+    bio: String,
+    public_repos: Number,
+    followers: Number,
+    following: Number,
+    location: String,
+    company: String,
+    blog: String,
+    github_created_at: Date,
+    github_updated_at: Date,
+    total_stars: Number,
+    top_language: String,
+    analyzed_at: Date,
+}
