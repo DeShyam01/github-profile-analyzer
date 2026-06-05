@@ -1,9 +1,11 @@
 import Header from "@/components/Header";
+import GithubAnalyzer from "@/components/GithubAnalyzer";
 
 export default function Home() {
   return (
-    <div>
+    <div className="h-screen">
       <Header />
+      <GithubAnalyzer />
     </div>
   );
 }

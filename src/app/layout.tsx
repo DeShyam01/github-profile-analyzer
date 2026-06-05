@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Chelsea_Market } from "next/font/google";
+// import { Chelsea_Market } from "next/font/google";
+import { Mona_Sans } from "next/font/google";
 import Providers from "./ThemeProvider";
 import "./globals.css";
 
-const font = Chelsea_Market({
-  weight: "400",
+const font = Mona_Sans({
+  // weight: "400",
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
