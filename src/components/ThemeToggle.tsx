@@ -18,7 +18,7 @@ export default function ThemeToggle() {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="bg-none flex justify-center align-middle"
     >
-      <p className="text-2xl">{theme === "dark" ? "☀️" : "🌙"}</p>
+      <p className="text-xl sm:text-2xl">{theme === "dark" ? "☀️" : "🌙"}</p>
     </button>
   );
 }

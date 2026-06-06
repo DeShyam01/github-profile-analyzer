@@ -3,7 +3,7 @@ import GithubAnalyzer from "@/components/GithubAnalyzer";
 
 export default function Home() {
   return (
-    <div className="h-screen">
+    <div className="w-full h-full">
       <Header />
       <GithubAnalyzer />
     </div>

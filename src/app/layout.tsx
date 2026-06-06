@@ -5,7 +5,6 @@ import Providers from "./ThemeProvider";
 import "./globals.css";
 
 const font = Mona_Sans({
-  // weight: "400",
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
