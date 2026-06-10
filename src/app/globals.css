@@ -17,6 +17,7 @@
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #94a3b8;
+  --text-interactive: #7ca3fd;
 
   --success: #3fb950;
   --warning: #d29922;
@@ -28,8 +29,8 @@
 
 .dark {
   /* Brand */
-  --background: #0a0f0d;
-  --surface: #111827;
+  --background: #010409;
+  --surface: #0d1117;
   --surface-hover: #1a1a1a;
 
   --primary: #238636;
@@ -85,6 +86,9 @@
   }
   .text-muted {
     color: var(--text-muted);
+  }
+  .text-interactive{
+    color: var(--text-interactive)
   }
 
   .text-success {

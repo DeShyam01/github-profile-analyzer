@@ -1,0 +1,7 @@
+<!-- Icon 2: Green users -->
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="9" cy="8" r="3" stroke="#22C55E" stroke-width="2"/>
+  <path d="M3.5 19C3.5 15.7 5.7 13.5 9 13.5C12.3 13.5 14.5 15.7 14.5 19" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="16" cy="7" r="2.5" stroke="#22C55E" stroke-width="2"/>
+  <path d="M15.5 13.5C18.4 13.5 20.5 15.6 20.5 19" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,7 +1,8 @@
-export interface UserProfiles {
+export interface UserProfile {
     id: Number,
     username: String,
     name: String,
+    avatar_url: String,
     bio: String,
     public_repos: Number,
     followers: Number,

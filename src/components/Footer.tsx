@@ -1,0 +1,112 @@
+"use client";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="w-full border-t border-theme bg-surface mt-auto">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* About Section */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary mb-3">
+              Github Analyzer
+            </h3>
+            <p className="text-secondary text-sm leading-relaxed">
+              Analyze GitHub profiles with ease. Get insights into repository
+              activity, contributions, and development patterns.
+            </p>
+          </div>
+
+          {/* Links Section */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary mb-3">
+              Resources
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary hover:text-primary transition-colors text-sm"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://docs.github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary hover:text-primary transition-colors text-sm"
+                >
+                  GitHub API Docs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://nextjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary hover:text-primary transition-colors text-sm"
+                >
+                  Next.js
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Section */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary mb-3">Connect</h3>
+            <div className="flex gap-4">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-primary transition-colors text-xl"
+                aria-label="GitHub"
+                title="Visit our GitHub"
+              >
+                🔗
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-primary transition-colors text-xl"
+                aria-label="LinkedIn"
+                title="Visit our LinkedIn"
+              >
+                💼
+              </a>
+              <a
+                href="mailto:contact@example.com"
+                className="text-secondary hover:text-primary transition-colors text-xl"
+                aria-label="Email"
+                title="Send us an email"
+              >
+                ✉️
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-theme mb-6"></div>
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-muted text-sm">
+          <p>&copy; {currentYear} Github Analyzer. All rights reserved.</p>
+          <p className="mt-4 md:mt-0">
+            Built with <span className="text-danger">♥</span> using Next.js &
+            React
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

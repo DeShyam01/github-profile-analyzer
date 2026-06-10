@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// import { Chelsea_Market } from "next/font/google";
 import { Mona_Sans } from "next/font/google";
 import Providers from "./ThemeProvider";
 import "./globals.css";
@@ -16,8 +15,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="en" className={`${font.variable} h-full antialiased`} suppressHydrationWarning>
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className="h-full antialiased font.variable font-sans" suppressHydrationWarning>
+      <body className="flex flex-col">
         <Providers>
           {children}
         </Providers>
