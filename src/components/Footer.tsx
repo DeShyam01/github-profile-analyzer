@@ -1,5 +1,8 @@
 "use client";
 
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Mail } from "lucide-react";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -69,7 +72,7 @@ const Footer = () => {
                 aria-label="GitHub"
                 title="Visit our GitHub"
               >
-                🔗
+                <FaGithub/>
               </a>
               <a
                 href="https://linkedin.com"
@@ -79,7 +82,7 @@ const Footer = () => {
                 aria-label="LinkedIn"
                 title="Visit our LinkedIn"
               >
-                💼
+                <FaLinkedin/>
               </a>
               <a
                 href="mailto:contact@example.com"
@@ -87,7 +90,7 @@ const Footer = () => {
                 aria-label="Email"
                 title="Send us an email"
               >
-                ✉️
+                <Mail width={20} height={20} />
               </a>
             </div>
           </div>
