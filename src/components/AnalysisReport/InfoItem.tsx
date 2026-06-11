@@ -5,9 +5,9 @@ const InfoItem = ({
   label,
   value,
 }: {
-  iconSrc: String;
-  label: String;
-  value: String;
+  iconSrc: string;
+  label: string;
+  value: string;
 }) => {
   return (
     <div className="h-max m-2 grid grid-cols-2 lg:flex lg:flex-col lg:gap-1">

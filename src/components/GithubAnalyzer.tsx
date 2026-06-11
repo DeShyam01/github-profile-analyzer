@@ -6,7 +6,7 @@ import { fetchGitHubProfile } from "@/services/github";
 import AnalysisReport from "./AnalysisReport/AnalysisReport";
 
 const GithubAnalyzer = () => {
-  const [username, setUsername] = useState<String>("");
+  const [username, setUsername] = useState<string>("");
   const [userData, setUserData] = useState<UserProfile>({
     id: 0,
     username: "",
@@ -25,7 +25,7 @@ const GithubAnalyzer = () => {
     top_language: "",
     analyzed_at: new Date(),
   });
-  const [showResult, setShowResult] = useState<Boolean>(false);
+  const [showResult, setShowResult] = useState<boolean>(false);
 
   const handleAnalyze = async () => {
     try {

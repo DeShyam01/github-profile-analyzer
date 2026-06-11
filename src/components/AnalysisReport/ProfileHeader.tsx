@@ -1,6 +1,6 @@
 import { UserProfile } from "@/types/profiles";
 
-const ProfileHeader = ({avatar_url, name, username, bio}: {avatar_url: String, name: String, username: String, bio: String}) => {
+const ProfileHeader = ({avatar_url, name, username, bio}: {avatar_url: string, name: string, username: string, bio: string}) => {
   return (
     <div className="p-2 flex justify-around">
       <div className="">

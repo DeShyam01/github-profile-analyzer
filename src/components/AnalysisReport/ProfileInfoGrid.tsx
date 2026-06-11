@@ -1,6 +1,6 @@
 import InfoItem from "./InfoItem";
 
-const ProfileInfoGrid = ({location, company, blog, top_language, github_created_at, github_updated_at, className}: {location: String, company: String, blog: String, top_language: String, github_created_at: Date, github_updated_at: Date, className: String}) => {
+const ProfileInfoGrid = ({location, company, blog, top_language, github_created_at, github_updated_at, className}: {location: string, company: string, blog: string, top_language: string, github_created_at: Date, github_updated_at: Date, className: string}) => {
   return (
     <div className={`mb-4 p-2 lg:mr-[10%] bg-surface rounded-xl border-theme sm:border-0 ${className}`}>
       <InfoItem iconSrc="/icons/location.svg" label="Location" value={`${location}`} />
