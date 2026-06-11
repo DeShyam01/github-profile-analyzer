@@ -1,31 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { UserProfile } from "@/types/profiles";
 import { fetchGitHubProfile } from "@/services/github";
 import AnalysisReport from "./AnalysisReport/AnalysisReport";
 
 const GithubAnalyzer = () => {
+  const [userData, setUserData] = useState<UserProfile | null>(null);
   const [username, setUsername] = useState<string>("");
-  const [userData, setUserData] = useState<UserProfile>({
-    id: 0,
-    username: "",
-    name: "",
-    avatar_url: "",
-    bio: "",
-    public_repos: 0,
-    followers: 0,
-    following: 0,
-    location: "",
-    company: "",
-    blog: "",
-    github_created_at: new Date(),
-    github_updated_at: new Date(),
-    total_stars: 0,
-    top_language: "",
-    analyzed_at: new Date(),
-  });
-  const [showResult, setShowResult] = useState<boolean>(false);
 
   const handleAnalyze = async () => {
     try {
@@ -40,15 +22,10 @@ const GithubAnalyzer = () => {
     }
   };
 
-  useEffect(() => {
-    setShowResult(true);
-    console.log(userData);
-  }, [userData]);
-
   return (
     <div className="h-full w-full flex flex-col items-center justify-center">
       <div className="w-[90%] sm:w-150 p-2">
-        {userData.username === "" && (
+        {!userData && (
           <>
             <h1 className="font-bold text-2xl sm:text-3xl text-center text-primary">
               Analyze any GitHub Profile
@@ -82,7 +59,7 @@ const GithubAnalyzer = () => {
           />
         </form>
       </div>
-      {userData.username !== "" && <AnalysisReport userData={userData} />}
+      {userData && <AnalysisReport userData={userData} />}
     </div>
   );
 };
