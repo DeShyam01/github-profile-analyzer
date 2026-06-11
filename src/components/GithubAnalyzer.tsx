@@ -11,14 +11,21 @@ const GithubAnalyzer = () => {
 
   const handleAnalyze = async () => {
     try {
-      if (!username) {
+      if (!username.trim()) {
         alert("Enter username");
+        return;
+      }
+
+      const githubUsernameRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
+
+      if (!githubUsernameRegex.test(username.trim())){
+        alert('Invalid username enter correct username');
         return;
       }
       const data = await fetchGitHubProfile(username);
       setUserData(data);
     } catch (e) {
-      console.error('Failed to fetch User');
+      alert('Failed to fetch User');
     }
   };
 
