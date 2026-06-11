@@ -7,15 +7,15 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-theme bg-surface mt-auto">
+    <footer className="w-full rounded-t-2xl border-t border-[#1f2937] bg-[#0d1117] mt-auto">
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About Section */}
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-3">
+            <h3 className="text-lg font-semibold text-[#fafafa] mb-3">
               Github Analyzer
             </h3>
-            <p className="text-secondary text-sm leading-relaxed">
+            <p className="text-[#d4d4d8] text-sm leading-relaxed">
               Analyze GitHub profiles with ease. Get insights into repository
               activity, contributions, and development patterns.
             </p>
@@ -23,7 +23,7 @@ const Footer = () => {
 
           {/* Links Section */}
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-3">
+            <h3 className="text-lg font-semibold text-[#fafafa] mb-3">
               Resources
             </h3>
             <ul className="space-y-2">
@@ -32,7 +32,7 @@ const Footer = () => {
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-secondary hover:text-primary transition-colors text-sm"
+                  className="text-[#d4d4d8] hover:text-[#fafafa] transition-colors text-sm"
                 >
                   GitHub
                 </a>
@@ -42,7 +42,7 @@ const Footer = () => {
                   href="https://docs.github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-secondary hover:text-primary transition-colors text-sm"
+                  className="text-[#d4d4d8] hover:text-[#fafafa] transition-colors text-sm"
                 >
                   GitHub API Docs
                 </a>
@@ -52,7 +52,7 @@ const Footer = () => {
                   href="https://nextjs.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-secondary hover:text-primary transition-colors text-sm"
+                  className="text-[#d4d4d8] hover:text-[#fafafa] transition-colors text-sm"
                 >
                   Next.js
                 </a>
@@ -62,13 +62,13 @@ const Footer = () => {
 
           {/* Social Section */}
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-3">Connect</h3>
+            <h3 className="text-lg font-semibold text-[#fafafa] mb-3">Connect</h3>
             <div className="flex gap-4">
               <a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-secondary hover:text-primary transition-colors text-xl"
+                className="text-[#d4d4d8] hover:text-[#fafafa] transition-colors text-xl"
                 aria-label="GitHub"
                 title="Visit our GitHub"
               >
@@ -78,7 +78,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-secondary hover:text-primary transition-colors text-xl"
+                className="text-[#d4d4d8] hover:text-[#fafafa] transition-colors text-xl"
                 aria-label="LinkedIn"
                 title="Visit our LinkedIn"
               >
@@ -86,7 +86,7 @@ const Footer = () => {
               </a>
               <a
                 href="mailto:contact@example.com"
-                className="text-secondary hover:text-primary transition-colors text-xl"
+                className="text-[#d4d4d8] hover:text-[#fafafa] transition-colors text-xl"
                 aria-label="Email"
                 title="Send us an email"
               >
@@ -97,10 +97,10 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-theme mb-6"></div>
+        <div className="border-t border-[#1f2937] mb-6"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-muted text-sm">
+        <div className="flex flex-col md:flex-row justify-between items-center text-[#71717a] text-sm">
           <p>&copy; {currentYear} Github Analyzer. All rights reserved.</p>
           <p className="mt-4 md:mt-0">
             Built with <span className="text-danger">♥</span> using Next.js &
