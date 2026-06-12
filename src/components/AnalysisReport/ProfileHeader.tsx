@@ -11,11 +11,11 @@ const ProfileHeader = ({avatar_url, name, username, bio}: {avatar_url: string, n
         />
       </div>
       <div className="ml-6">
-        <h1 className="font-bold text-xl lg:text-3xl">{name}</h1>
-        <p className="text-interactive text-[18.54px]">@{username}</p>
+        {name && (<h1 className="font-bold text-xl lg:text-3xl">{name}</h1>)}
+        <p className="text-interactive text-base">@{username}</p>
         <p className="mt-4 text-[14px]">Bio:</p>
         <p
-          className={`text-[10.81px] ${bio === null ? "text-muted" : "text-secondary"}`}
+          className={`text-[10.81px] ${!bio ? "text-muted" : "text-secondary"}`}
         >
           {bio ? bio : "Not provided"}
         </p>

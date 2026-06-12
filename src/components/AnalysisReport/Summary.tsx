@@ -13,7 +13,7 @@ const Summary = ({ user }: { user: UserProfile }) => {
             Analysis Summary
           </h1>
           <p className="text-xs text-secondary">
-            {user.name} has {`${user.public_repos}`} public repositories and is
+            {user.name ? user.name : "This user"} has {`${user.public_repos}`} public repositories and is
             followed by {`${user.followers}`} users. They Primiarly work with{" "}
             {user.top_language || "not available"}.
           </p>
