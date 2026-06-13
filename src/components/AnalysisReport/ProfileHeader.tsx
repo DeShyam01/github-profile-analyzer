@@ -12,10 +12,10 @@ const ProfileHeader = ({avatar_url, name, username, bio}: {avatar_url: string, n
       </div>
       <div className="ml-6">
         {name && (<h1 className="font-bold text-xl lg:text-3xl">{name}</h1>)}
-        <p className="text-interactive text-base">@{username}</p>
+        <a href={`https://github.com/${username}`} target="_blank" className="text-blue-600/90 text-interactive text-base">@{username}</a>
         <p className="mt-4 text-[14px]">Bio:</p>
         <p
-          className={`text-[10.81px] ${!bio ? "text-muted" : "text-secondary"}`}
+          className={`text-[10.81px] ${!bio ? "text-card-foreground/75" : "text-secondary-foreground"}`}
         >
           {bio ? bio : "Not provided"}
         </p>

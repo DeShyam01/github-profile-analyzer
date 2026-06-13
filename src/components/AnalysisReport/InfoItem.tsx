@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React, { AnchorHTMLAttributes } from "react";
 
 const InfoItem = ({
   iconSrc,
@@ -7,7 +8,7 @@ const InfoItem = ({
 }: {
   iconSrc: string;
   label: string;
-  value: string;
+  value: string | React.ReactElement<HTMLAnchorElement>;
 }) => {
   return (
     <div className="h-max m-2 grid grid-cols-2 lg:flex lg:flex-col lg:gap-1">
@@ -18,9 +19,9 @@ const InfoItem = ({
           width={16}
           height={16}
         />
-        <p className="text-[12px] text-secondary">{label}</p>
+        <p className="text-card-foreground/85 text-[12px]">{label}</p>
       </span>
-      <p className="text-[12px] text-primary">{value}</p>
+      {typeof value === "string" ? (<p className="text-[12px]">{value}</p>) : (value)}
     </div>
   );
 };

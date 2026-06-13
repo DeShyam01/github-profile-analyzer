@@ -4,6 +4,8 @@ import { useState } from "react";
 import { UserProfile } from "@/types/profiles";
 import { fetchGitHubProfile } from "@/services/github";
 import AnalysisReport from "./AnalysisReport/AnalysisReport";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 const GithubAnalyzer = () => {
   const [userData, setUserData] = useState<UserProfile | null>(null);
@@ -18,14 +20,14 @@ const GithubAnalyzer = () => {
 
       const githubUsernameRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
 
-      if (!githubUsernameRegex.test(username.trim())){
-        alert('Invalid username enter correct username');
+      if (!githubUsernameRegex.test(username.trim())) {
+        alert("Invalid username enter correct username");
         return;
       }
       const data = await fetchGitHubProfile(username);
       setUserData(data);
     } catch (e) {
-      alert('Failed to fetch User');
+      alert("Failed to fetch User");
     }
   };
 
@@ -34,36 +36,32 @@ const GithubAnalyzer = () => {
       <div className="w-[90%] sm:w-150 p-2">
         {!userData && (
           <>
-            <h1 className="font-bold text-2xl sm:text-3xl text-center text-primary">
+            <h1 className="font-bold text-2xl sm:text-3xl text-center">
               Analyze any GitHub Profile
             </h1>
-            <p className="text-sm sm:text-[16px] text-center mb-4 mt-3 text-secondary">
+            <p className="text-sm sm:text-[16px] text-center mb-4 mt-3 text-secondary-foreground">
               Enter a GitHub username to analyze their profile and repositories
             </p>
           </>
         )}
         <form
-          className="flex justify-evenly"
+          className="flex justify-evenly items-center gap-1"
           onSubmit={(e) => {
             e.preventDefault();
             handleAnalyze();
           }}
         >
-          <input
-            type="text"
+          <Input
             placeholder="Enter GitHub username (e.g. octocat)"
-            className="rounded p-2 border-theme border-2 outline-0 w-[75%] sm:w-[85%]"
+            required
             onChange={(e) => {
               setUsername(e.target.value);
             }}
-            required
           />
-          <input
-            type="button"
-            value="Analyze"
-            className="font-bold p-2 rounded text-center btn-primary"
-            onClick={handleAnalyze}
-          />
+
+          <Button size="lg" onClick={handleAnalyze}>
+            Analyze
+          </Button>
         </form>
       </div>
       {userData && <AnalysisReport userData={userData} />}

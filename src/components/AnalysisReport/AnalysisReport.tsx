@@ -9,7 +9,7 @@ import Summary from "./Summary";
 const AnalysisReport = ({ userData }: { userData: UserProfile }) => {
   return (
     <div className="w-full h-full p-8">
-      <div className="flex justify-between bg-surface rounded-xl mb-4 border-theme p-6">
+      <div className="text-card-foreground bg-card border border-border mb-4 p-6 flex justify-between rounded-xl">
         <ProfileHeader
           avatar_url={userData.avatar_url}
           name={userData.name}
