@@ -20,7 +20,7 @@ const GithubAnalyzer = () => {
 
       const githubUsernameRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
 
-      if (!githubUsernameRegex.test(username.trim())) {
+      if (!githubUsernameRegex.test(username.trim())) { 
         alert("Invalid username enter correct username");
         return;
       }
