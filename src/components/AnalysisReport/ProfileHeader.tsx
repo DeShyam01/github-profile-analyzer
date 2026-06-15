@@ -1,15 +1,13 @@
 import { UserProfile } from "@/types/profiles";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const ProfileHeader = ({avatar_url, name, username, bio}: {avatar_url: string, name: string, username: string, bio: string}) => {
   return (
-    <div className="p-2 flex justify-around">
-      <div className="">
-        <img
-          src={`${avatar_url}`}
-          alt="avatar"
-          className="rounded-full w-25 md:w-30 lg:w-50"
-        />
-      </div>
+    <div className="flex justify-around items-center">
+      <Avatar className="size-25 sm:size-32">
+        <AvatarImage src={avatar_url} />
+        <AvatarFallback>Profile</AvatarFallback>
+      </Avatar>
       <div className="ml-6">
         {name && (<h1 className="font-bold text-xl lg:text-3xl">{name}</h1>)}
         <a href={`https://github.com/${username}`} target="_blank" className="text-blue-600/90 text-interactive text-base">@{username}</a>

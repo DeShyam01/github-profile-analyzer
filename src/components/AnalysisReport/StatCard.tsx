@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Card, CardContent, CardTitle } from "../ui/card";
 
 const StatCard = ({
   iconSrc,
@@ -10,14 +11,21 @@ const StatCard = ({
   value: number;
 }) => {
   return (
-    <div className="bg-card border border-border flex flex-col items-center rounded-xl justify-around p-2 sm:p-4">
-      <Image src={`${iconSrc}`} alt={`icon`} width={32} height={32} className="hidden sm:block" />
-      <span className="flex gap-1 sm:block">
-        <Image src={`${iconSrc}`} alt={`icon`} width={16} height={16} className="inline sm:hidden" />
-        <p className="text-card-foreground/90 text-xs sm:text-lg inline sm:block">{`${title}`}</p>
-      </span>
-      <p className="font-bold text-2xl">{`${value}`}</p>
-    </div>
+    <Card className="justify-between items-center">
+      <CardTitle className="flex gap-1 sm:flex-col sm:items-center">
+        <Image
+          src={`${iconSrc}`}
+          alt={`icon`}
+          width={18}
+          height={18}
+          className="sm:size-8 lg:size-12"
+        />
+        <p className="text-card-foreground/90">{`${title}`}</p>
+      </CardTitle>
+      <CardContent>
+        <p className="font-bold text-2xl text-center">{`${value}`}</p>
+      </CardContent>
+    </Card>
   );
 };
 

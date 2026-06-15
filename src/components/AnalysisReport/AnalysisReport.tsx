@@ -5,10 +5,11 @@ import ProfileHeader from "./ProfileHeader";
 import ProfileInfoGrid from "./ProfileInfoGrid";
 import StatsGrid from "./StatsGrid";
 import Summary from "./Summary";
+import { Card, CardContent } from "../ui/card";
 
 const AnalysisReport = ({ userData }: { userData: UserProfile }) => {
   return (
-    <div className="w-full h-full p-8">
+    <div className="w-full h-full p-4 sm:p-8">
       <div className="text-card-foreground bg-card border border-border mb-4 p-6 flex justify-between rounded-xl">
         <ProfileHeader
           avatar_url={userData.avatar_url}
@@ -31,16 +32,20 @@ const AnalysisReport = ({ userData }: { userData: UserProfile }) => {
         followers={userData.followers}
         following={userData.following}
       />
-      <ProfileInfoGrid
-        location={userData.location}
-        company={userData.company}
-        blog={userData.blog}
-        top_language={userData.top_language}
-        github_created_at={userData.github_created_at}
-        github_updated_at={userData.github_updated_at}
-        className="grid grid-cols-1 lg:hidden"
-      />
-      <Summary user={userData}/>
+      <Card className="mb-4 lg:hidden">
+        <CardContent>
+          <ProfileInfoGrid
+            location={userData.location}
+            company={userData.company}
+            blog={userData.blog}
+            top_language={userData.top_language}
+            github_created_at={userData.github_created_at}
+            github_updated_at={userData.github_updated_at}
+            className="grid grid-cols-1"
+          />
+        </CardContent>
+      </Card>
+      <Summary user={userData} />
     </div>
   );
 };
