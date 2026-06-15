@@ -10,7 +10,7 @@ import { Card, CardContent } from "../ui/card";
 const AnalysisReport = ({ userData }: { userData: UserProfile }) => {
   return (
     <div className="w-full h-full p-4 sm:p-8">
-      <div className="text-card-foreground bg-card border border-border mb-4 p-6 flex justify-between rounded-xl">
+      <div className="text-card-foreground bg-card border border-border mb-4 p-6 gap-2 flex justify-between rounded-xl">
         <ProfileHeader
           avatar_url={userData.avatar_url}
           name={userData.name}
