@@ -5,6 +5,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const lora = Lora({ subsets: ["latin"], variable: "--font-serif" });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-1 min-h-screen">{children}</main>
           <Footer />
+          <Toaster richColors closeButton position="top-right" duration={2500} />
         </Providers>
       </body>
     </html>

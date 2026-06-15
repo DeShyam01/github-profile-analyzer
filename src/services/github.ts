@@ -9,7 +9,8 @@ export const fetchGitHubProfile = async (
   try {
     const response = await api.post(`/analyze/${username}`);
     return response.data as UserProfile;
-  } catch (error) {
-    throw new Error("Failed to fetch GitHub profile");
+  } catch (error: any) {
+    console.log(error.status);
+    throw error;
   }
 };

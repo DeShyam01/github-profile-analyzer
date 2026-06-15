@@ -1,33 +1,56 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { UserProfile } from "@/types/profiles";
 import { fetchGitHubProfile } from "@/services/github";
 import AnalysisReport from "./AnalysisReport/AnalysisReport";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { toast } from "sonner";
+import { Spinner } from "./ui/spinner";
 
 const GithubAnalyzer = () => {
   const [userData, setUserData] = useState<UserProfile | null>(null);
   const [username, setUsername] = useState<string>("");
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleAnalyze = async () => {
+    setLoading(true);
+
     try {
       if (!username.trim()) {
-        alert("Enter username");
+        setLoading(false);
+        toast.dismiss();
+        toast.warning("Enter username");
         return;
       }
 
+      inputRef.current?.blur();
+      
       const githubUsernameRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
-
+      
       if (!githubUsernameRegex.test(username.trim())) { 
-        alert("Invalid username enter correct username");
+        setLoading(false);
+        toast.dismiss();
+        toast.error("Enter valid username");
         return;
       }
       const data = await fetchGitHubProfile(username);
+      if(!data){
+        setLoading(false);
+        toast.dismiss();
+        toast.error("User not found");
+        return;
+      }
+      toast.dismiss();
+      toast.success("Found user data")
       setUserData(data);
+      setLoading(false);
     } catch (e) {
-      alert("Failed to fetch User");
+      setLoading(false);
+      toast.dismiss();
+      toast.error("Something went wrong");
     }
   };
 
@@ -52,6 +75,7 @@ const GithubAnalyzer = () => {
           }}
         >
           <Input
+            ref={inputRef}
             placeholder="Enter GitHub username (e.g. octocat)"
             required
             onChange={(e) => {
@@ -59,8 +83,8 @@ const GithubAnalyzer = () => {
             }}
           />
 
-          <Button size="lg" onClick={handleAnalyze}>
-            Analyze
+          <Button disabled={isLoading} size="lg">
+            {isLoading ? <Spinner className="size-6" /> : "Analyze"}
           </Button>
         </form>
       </div>
