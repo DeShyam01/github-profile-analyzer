@@ -11,7 +11,7 @@ const InfoItem = ({
   value: string | React.ReactElement<HTMLAnchorElement>;
 }) => {
   return (
-    <div className="h-max m-2 grid grid-cols-2 lg:flex lg:flex-col lg:gap-1">
+    <div className="h-max m-2 grid grid-cols-2 lg:grid-cols-1">
       <span className="flex gap-2">
         <Image
           src={`${iconSrc}`}
