@@ -65,7 +65,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-3">Connect</h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/deshyam01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-card-foreground hover:text-accent-foreground transition-colors text-xl"
@@ -75,7 +75,7 @@ const Footer = () => {
                 <FaGithub/>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/shyamsundar-gayen-77a904309"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-card-foreground hover:text-accent-foreground transition-colors text-xl"
@@ -85,7 +85,7 @@ const Footer = () => {
                 <FaLinkedin/>
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:shyamsundargayen345@google.com"
                 className="text-card-foreground hover:text-accent-foreground transition-colors text-xl"
                 aria-label="Email"
                 title="Send us an email"
@@ -105,6 +105,7 @@ const Footer = () => {
           <p className="mt-4 md:mt-0">
             Built with <span className="text-destructive">♥</span> using Next.js &
             React
+          <span className="text-right block text-xs">version {process.env.APP_VERSION}</span>
           </p>
         </div>
       </div>
