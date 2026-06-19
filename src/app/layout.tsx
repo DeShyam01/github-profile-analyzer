@@ -32,10 +32,10 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
-      <body className="flex flex-col overflow-x-hidden">
+      <body className="min-h-screen flex flex-col">
         <Providers>
           <Header />
-          <main className="flex-1 min-h-screen">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
           <Toaster richColors closeButton position="top-right" duration={2500} />
         </Providers>
