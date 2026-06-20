@@ -67,7 +67,6 @@ export default function Home() {
       {/* ------------ Search bar --------------- */}
       <div className="h-full w-full flex flex-col items-center justify-center px-4 pt-40">
         <HoleBackground
-          // strokeColor="rgba(255,255,255,0.05)" // blur
           strokeColor="#73737325" // blur
           className="absolute h-full w-full -z-1"
           style={{
@@ -111,33 +110,32 @@ export default function Home() {
             </Button>
           </form>
         </div>
-        {!isLoading && !userData && (
-          <>
-            <p className="text-secondary-foreground/80 text-sm mt-4">
-              Try analyzing this profiles:
-            </p>
-            <div className="mt-2 mx-auto w-full max-w-md flex flex-wrap justify-center gap-2">
-              {sampleUsers.map((user, index) => (
-                <Badge
-                  key={index}
-                  variant="outline"
-                  className="hover:bg-primary hover:text-primary-foreground text-sm"
-                  onClick={() => {
-                    setUsername(user);
-                    // inputRef.current?.focus();
-                    handleAnalyze(user);
-                  }}
-                >
-                  {user}
-                </Badge>
-              ))}
-            </div>
-          </>
-        )}
-            <p className="mt-10 text-muted-foreground text-sm">
-              Free tool - Analyze any Profile
-            </p>
       </div>
+      {!isLoading && !username && (
+        <>
+          <p className="text-secondary-foreground/80 text-sm text-center mt-4">
+            Try analyzing these profiles:
+          </p>
+          <div className="mt-2 mx-auto w-full max-w-md flex flex-wrap justify-center gap-2">
+            {sampleUsers.map((user, index) => (
+              <Badge
+                key={index}
+                variant="outline"
+                className="hover:bg-primary hover:text-primary-foreground text-sm"
+                onClick={() => {
+                  setUsername(user);
+                  handleAnalyze(user);
+                }}
+              >
+                {user}
+              </Badge>
+            ))}
+          </div>
+        </>
+      )}
+      <p className="mt-10 text-muted-foreground text-sm text-center">
+        Free tool - Analyze any Profile
+      </p>
       {userData && <AnalysisReport userData={userData} />}
     </div>
   );

@@ -11,7 +11,7 @@ const StatCard = ({
   value: number;
 }) => {
   return (
-    <Card className="justify-between items-center">
+    <Card className="justify-between items-center border border-border">
       <CardTitle className="flex gap-1 sm:flex-col sm:items-center">
         <Image
           src={`${iconSrc}`}
